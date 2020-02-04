@@ -1,0 +1,31 @@
+<h1>Part Detail</h1>
+<p>This is the parts detail page, which is also an api call. <a href="<%= ENV['API_URL'] + '/parts/' + @part.id.to_s %>" target="_blank"><%= ENV['API_URL'] + '/parts/' + @part.id.to_s %></a> |  <a href="/"><< Back</a></p>
+
+<p>
+    <strong>Title: <%= @part.title %></strong><br />
+    ID: <%= @part.id %><br />
+    Created By: <%= @part.created_by %><br />
+    Created At: <%= @part.created_at %><br />
+</p>
+
+<h3>Part Items</h3>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @part.items.each do |item| %>
+        <tr>
+        <td><%= item.id %></td>
+        <td><%= item.name %></td>
+        <td><%= item.created_at %></td>
+        </tr>
+    <% end %>
+    
+  </tbody>
+</table>

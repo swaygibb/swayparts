@@ -72,3 +72,4 @@ end
 
 gem 'devise'
 gem 'bootstrap'
+gem 'dotenv-rails', groups: [:development, :test]

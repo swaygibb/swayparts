@@ -1,1 +1,24 @@
 <h1>Parts Consumer</h1> 
+<p>Below is a parts list pulled from a parts api. <a href="<%= ENV['API_URL'] + '/parts' %>" target="_blank"><%= ENV['API_URL'] + '/parts' %></a></p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Created By</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @partsList.each do |part| %>
+        <tr>
+        <td><%= part.id %></td>
+        <td><%= part.title %></td>
+        <td><%= part.created_by %></td>
+        <td><a href="/parts/<%= part.id %>">View Details</a></td>
+        </tr>
+    <% end %>
+    
+  </tbody>
+</table>
