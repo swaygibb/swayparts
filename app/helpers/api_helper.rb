@@ -1,3 +1,6 @@
+require 'net/http'
+require 'json'
+
 module ApiHelper
     def getParts()
         url = "#{ENV['API_URL']}/parts"
